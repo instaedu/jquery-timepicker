@@ -457,6 +457,13 @@ requires jQuery 1.7+
 			list.append(row);
 		}
 
+		if (settings.endOption) {
+			if (Object(settings.endOption) === settings.endOption) {
+				var noneElement = _generateNoneElement(settings.endOption, settings.useSelect);
+				list.append(noneElement);
+			}
+		}
+
 		wrapped_list.data('timepicker-input', self);
 		self.data('timepicker-list', wrapped_list);
 
